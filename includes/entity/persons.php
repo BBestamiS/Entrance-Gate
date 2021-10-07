@@ -1,7 +1,7 @@
 <!-- Kullanıcıların özelliklerinin bulunduğu dosya -->
 <?php
 
-class user
+class persons
 {
  private $name = null;
 

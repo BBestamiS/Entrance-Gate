@@ -1,0 +1,362 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* bg start */
+@keyframes splashbgopacity{
+from{
+    opacity: 0;
+}
+to{
+    opacity: 100;
+}
+}
+.bg{
+    opacity: 0;
+    animation-name: splashbgopacity;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.bg1{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+@keyframes colorswidth{
+from{
+    width: 500px;
+}
+to{
+    width: 120%;
+}
+}
+.color2,
+.color3,
+.color4,
+.color1{
+    border-radius: 50px;
+    z-index: 1;
+    position: absolute;
+    width: 500px;
+    animation-name: colorswidth;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    height: 500px;
+}
+.color5,
+.color6{
+    border-radius: 50px;
+    z-index: 1;
+    position: absolute;
+    width: 120%;
+    height: 500px;
+}
+.color1{
+    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(236, 240, 35, 0.7) 35%, rgba(224, 35, 240, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
+    transform: rotate(-135deg);
+}
+.color2{
+    background: linear-gradient(266.75deg,rgba(35, 240, 228, 0) 5%, rgba(35, 240, 228, 0.7) 35%, rgba(39, 35, 240, 0.7) 65%, rgba(39, 35, 240, 0) 93%);
+    transform: rotate(-45deg);
+}
+.color3{
+    background: linear-gradient(266.75deg, rgba(240, 35, 207, 0) 5%, rgba(240, 35, 207, 0.7) 35%, rgba(64, 240, 35, 0.7) 65%, rgba(64, 240, 35, 0) 93%);
+    transform: rotate(-135deg);
+}
+.color4{
+    background: linear-gradient(266.75deg,rgba(240, 97, 35, 0) 5%, rgba(240, 97, 35, 0.7) 35%, rgba(35, 240, 228, 0.7) 65%, rgba(35, 240, 228, 0) 93%);
+    transform: rotate(-45deg);
+}
+.color5{
+    background: linear-gradient(266.75deg, rgba(240, 35, 207, 0) 5%, rgba(240, 35, 207, 0.7) 35%, rgba(64, 240, 35, 0.7) 65%, rgba(64, 240, 35, 0) 93%);
+    transform: rotate(-135deg);
+}
+.color6{
+    background: linear-gradient(266.75deg,rgba(240, 97, 35, 0) 5%, rgba(240, 97, 35, 0.7) 35%, rgba(35, 240, 228, 0.7) 65%, rgba(35, 240, 228, 0) 93%);
+    transform: rotate(-45deg);
+}
+/* bg end */
+
+/* form login start */
+.login-input-div{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+/* form login start */
+/* form start */
+.form-section{
+    opacity: 0;
+    animation-name: splashform;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-section-disable{
+    opacity: 1000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes splashform{
+from{
+    opacity: 0;
+}
+to{
+    opacity: 100;
+}
+}
+.form{
+    height: 90%;
+    max-height: 750px;
+    max-width: 700px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(212.81deg, rgba(182, 182, 182, 0.6) 1.86%, rgba(102, 92, 219, 0.426) 99.43%);
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    border-radius: 90px;
+}
+.input-left{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 80%;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.input-right::placeholder,
+.input-left::placeholder{
+    color: white;
+}
+
+.input-right::placeholder{
+    text-align: end;
+}
+.input-right{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 80%;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.submit-button{
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    color:rgba(185, 231, 55, 1);
+    transition: 0.5s;
+}
+.submit-button:hover{
+    
+    color:rgb(55, 122, 231);
+}
+.back-animate{
+    animation-duration: 0.5s;
+    margin-left: 120px;
+    position: relative;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-animate-a{
+    text-decoration: none;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dot-black{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.dot-white{
+    position: absolute ;
+    background: white;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    width: 50%;
+    animation-duration: 1s;
+    animation-name: changewidth;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+}
+@keyframes changewidth{
+    0% {
+        background: #FFFFFF;
+        width: 50%;
+    }
+    100%{
+        background-color: orange;
+        width: 30%;
+    }
+}
+.dot-stroke{
+    opacity: 0;
+    position: absolute;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
+    width: 0px;
+    border-radius: 50%;
+    transition: 0.5s ;
+}
+.back-animate:hover .dot-stroke{
+    opacity: 100;
+    width: 130%;
+}
+.dot-text{
+    margin-left: 20px;
+    color: black;
+    opacity: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    width: 100px;
+    position: relative;
+}
+@keyframes opentext{
+    from{
+    opacity: 0;
+    }
+    to{
+    opacity: 100;
+    }
+}
+.back-animate:hover .dot-text{
+    animation-duration: 1s;
+    animation-name: opentext;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+@keyframes changelocation{
+    from{
+        margin-left: 80px;
+    }
+    to{
+        margin-left: 0px;
+    }
+}
+.back-animate:hover{
+   
+    animation-name: changelocation;
+    animation-fill-mode: forwards;
+}
+.plate-div{
+    display: flex;
+    width: 80%;
+    height: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.input-left-plete{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.input-left-plete,
+.input-right-plete,
+.input-center-plete{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid white;
+}
+.input-center-plete::placeholder{
+    text-align: center;
+}
+.input-center-plete{
+    text-align: center;
+}
+.input-left-plete::placeholder{
+    text-align: end;
+}
+.input-left-plete{
+    text-align: end;
+}
+.input-right-plete{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.input-left-plete::placeholder,
+.input-center-plete::placeholder,
+.input-right-plete::placeholder{
+    color: white;
+}
+.plate-text{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+.plate-info-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* form end */

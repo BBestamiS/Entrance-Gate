@@ -2,10 +2,6 @@
 
 <?php
     include_once 'header.php'; //Header kısmının index.php sayfasına dahil edilmesi.
-?>
-<div class="h1-div">
-        <h1 class="h1">EntranceGate'e Hoşgeldin!</h1>
-</div>
-<?php
+    include_once 'signup.php';
     include_once 'footer.php'; //Footer kısmının index.php sayfasına dahil edilmesi.
 ?>
