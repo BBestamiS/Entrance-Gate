@@ -1,4 +1,7 @@
 @media only screen and (max-width: 1150px) {
+    .form-info-text{
+        font-size: 2.5vw;
+    }
     .form{
         width: 50%;
     }
