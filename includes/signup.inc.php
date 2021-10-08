@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
             exit();
         }
         session_start();
-        $_SESSION["plate"] = $_POST['plateleft'] . $_POST['platecenter'] . $_POST['plateright'];
+        $_SESSION["plate"] = $_POST['plateleft'] . " " . $_POST['platecenter'] . " " . $_POST['plateright'];
         $_SESSION["name"] = $_POST['name'];
         $_SESSION["surname"] = $_POST['surname'];
         $_SESSION["password"] = $_POST['hashed_password'];

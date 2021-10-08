@@ -2,6 +2,11 @@
 
 <?php
     include_once 'header.php'; //Header kısmının index.php sayfasına dahil edilmesi.
-    include_once 'signup.php';
+    session_start();
+    if(isset($_SESSION['personid'])){
+        header('location: ./main.php');
+    }else{
+        include_once 'login_signup.php';
+    }
     include_once 'footer.php'; //Footer kısmının index.php sayfasına dahil edilmesi.
 ?>

@@ -61,11 +61,19 @@
                         ';
                     }
                    
-                } else{
-                    echo '
-                    <section class="form-section">
-                    ';
                 }
+                else{
+                    if(isset($_GET['error'])){
+                        echo'
+                         <section class="form-section-disable">
+                        ';
+                    }
+                    else{
+                        echo '
+                        <section class="form-section">
+                    ';
+                    }
+                } 
 
                 if(isset($_GET['page']) && $_GET['page'] == 'register'){
                     echo '
@@ -87,7 +95,7 @@
                                 if (isset($_GET['error'])) {
                                     if($_GET['error'] == 'invalidPlate'|| $_GET['error'] == 'emptyForm'|| $_GET['error'] == 'invalidName'|| $_GET['error'] == 'invalidSurName' || $_GET['error'] == 'invalidEmail' || $_GET['error'] == 'epostataken'){
                                         echo'
-                                        <a class="back-animate-a" href="signup.php">
+                                        <a class="back-animate-a" href="login_signup.php">
                                         <div class="dot-black">
                                            <div class="dot-white"></div>
                                            <div class="dot-stroke"></div>
@@ -106,7 +114,7 @@
                                     }
                                 } else{
                                     echo'
-                                    <a class="back-animate-a" href="signup.php">
+                                    <a class="back-animate-a" href="login_signup.php">
                                     <div class="dot-black">
                                        <div class="dot-white"></div>
                                        <div class="dot-stroke"></div>
@@ -117,7 +125,7 @@
                                 }
                             } elseif($_GET['section'] == '2' && isset($_SESSION['name']) && isset($_SESSION['surname']) && isset($_SESSION['email']) && isset($_SESSION['password']) && isset($_SESSION['plate'])){
                                 echo'
-                                <a class="back-animate-a" href="signup.php">
+                                <a class="back-animate-a" href="login_signup.php">
                                 <div class="dot-black">
                                    <div class="dot-white"></div>
                                    <div class="dot-stroke"></div>
@@ -127,7 +135,7 @@
                             }
                             elseif ($_GET['section'] == '3' && isset($_SESSION['possition_id'])) {
                                 echo'
-                                <a class="back-animate-a" href="signup.php">
+                                <a class="back-animate-a" href="login_signup.php">
                                 <div class="dot-black">
                                    <div class="dot-white"></div>
                                    <div class="dot-stroke"></div>
@@ -137,7 +145,7 @@
                             }
                             elseif ($_GET['section'] == '4' && isset($_SESSION['faculty_id'])) {
                                 echo'
-                                <a class="back-animate-a" href="signup.php">
+                                <a class="back-animate-a" href="login_signup.php">
                                 <div class="dot-black">
                                    <div class="dot-white"></div>
                                    <div class="dot-stroke"></div>
@@ -213,11 +221,28 @@
                                         ';
                                     } else{
                                         echo'
-                                        <div class="login-input-div">
+                                            <div class="login-input-div">
                                             <input class="input-left" type="text" name="email" placeholder="ePosta">
                                             <input class="input-right" type="password" name="password" placeholder="Parola">
-                                        </div>
-                                        <button class="submit-button" type="submit" name="submit">Giriş</button>
+                                            </div>
+                                            <div class="error-form">';
+                                            if(isset($_GET['error'])){
+                                                if($_GET['error'] == 'emptyinput'){
+                                                   echo '<p class="error-p">Tüm alanları doldurunuz!</p>';
+                                                } 
+                                                elseif($_GET['error'] == 'invalidEmail'){
+                                                    echo '<p class="error-p">Geçerli ePosta giriniz!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wronglogin'){
+                                                    echo '<p class="error-p">Kayıtlı kullanıcı bulunamadı!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wrongPwd'){
+                                                    echo '<p class="error-p">Hatalı parola!</p>';
+                                                }
+                                            }
+                                            echo'
+                                           <button class="submit-button" type="submit" name="submit">Giriş</button>
+                                            </div>
                                         ';
                                     }
                                 } else{
@@ -349,7 +374,24 @@
                                     <input class="input-left" type="text" name="email" placeholder="ePosta">
                                     <input class="input-right" type="password" name="password" placeholder="Parola">
                                 </div>
-                                <button class="submit-button" type="submit" name="submit">Giriş</button>
+                                <div class="error-form">';
+                                            if(isset($_GET['error'])){
+                                                if($_GET['error'] == 'emptyinput'){
+                                                   echo '<p class="error-p">Tüm alanları doldurunuz!</p>';
+                                                } 
+                                                elseif($_GET['error'] == 'invalidEmail'){
+                                                    echo '<p class="error-p">Geçerli ePosta giriniz!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wronglogin'){
+                                                    echo '<p class="error-p">Kayıtlı kullanıcı bulunamadı!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wrongPwd'){
+                                                    echo '<p class="error-p">Hatalı parola!</p>';
+                                                }
+                                            }
+                                            echo'
+                                           <button class="submit-button" type="submit" name="submit">Giriş</button>
+                                            </div>
                                 ';
                             }
                         }else{
@@ -358,7 +400,24 @@
                         <input class="input-left" type="text" name="email" placeholder="ePosta">
                         <input class="input-right" type="password" name="password" placeholder="Parola">
                     </div>
-                    <button class="submit-button" type="submit" name="submit">Giriş</button>
+                    <div class="error-form">';
+                                            if(isset($_GET['error'])){
+                                                if($_GET['error'] == 'emptyinput'){
+                                                   echo '<p class="error-p">Tüm alanları doldurunuz!</p>';
+                                                } 
+                                                elseif($_GET['error'] == 'invalidEmail'){
+                                                    echo '<p class="error-p">Geçerli ePosta giriniz!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wronglogin'){
+                                                    echo '<p class="error-p">Kayıtlı kullanıcı bulunamadı!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wrongPwd'){
+                                                    echo '<p class="error-p">Hatalı parola!</p>';
+                                                }
+                                            }
+                                            echo'
+                                           <button class="submit-button" type="submit" name="submit">Giriş</button>
+                                            </div>
                     ';
                         }
                     }else{
@@ -367,7 +426,24 @@
                             <input class="input-left" type="text" name="email" placeholder="ePosta">
                             <input class="input-right" type="password" name="password" placeholder="Parola">
                         </div>
-                        <button class="submit-button" type="submit" name="submit">Giriş</button>
+                        <div class="error-form">';
+                                            if(isset($_GET['error'])){
+                                                if($_GET['error'] == 'emptyinput'){
+                                                   echo '<p class="error-p">Tüm alanları doldurunuz!</p>';
+                                                } 
+                                                elseif($_GET['error'] == 'invalidEmail'){
+                                                    echo '<p class="error-p">Geçerli ePosta giriniz!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wronglogin'){
+                                                    echo '<p class="error-p">Kayıtlı kullanıcı bulunamadı!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wrongPwd'){
+                                                    echo '<p class="error-p">Hatalı parola!</p>';
+                                                }
+                                            }
+                                            echo'
+                                           <button class="submit-button" type="submit" name="submit">Giriş</button>
+                                            </div>
                         ';
                     }
                    
@@ -377,11 +453,28 @@
                         <input class="input-left" type="text" name="email" placeholder="ePosta">
                         <input class="input-right" type="password" name="password" placeholder="Parola">
                     </div>
-                    <button class="submit-button" type="submit" name="submit">Giriş</button>
+                    <div class="error-form">';
+                                            if(isset($_GET['error'])){
+                                                if($_GET['error'] == 'emptyinput'){
+                                                   echo '<p class="error-p">Tüm alanları doldurunuz!</p>';
+                                                } 
+                                                elseif($_GET['error'] == 'invalidEmail'){
+                                                    echo '<p class="error-p">Geçerli ePosta giriniz!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wronglogin'){
+                                                    echo '<p class="error-p">Kayıtlı kullanıcı bulunamadı!</p>';
+                                                }
+                                                elseif($_GET['error'] == 'wrongPwd'){
+                                                    echo '<p class="error-p">Hatalı parola!</p>';
+                                                }
+                                            }
+                                            echo'
+                                           <button class="submit-button" type="submit" name="submit">Giriş</button>
+                                            </div>
                     ';
                 }
                 ?>
-                
+               
             </form>
         </section>
         <section class="bg">
@@ -448,10 +541,18 @@
                     }
                    
                 } else{
-                    echo '
-                        <div class="color1"></div>
-                        <div class="color2"></div>
-                    ';
+                    if(isset($_GET['error'])){
+                        echo '
+                        <div class="color7"></div>
+                        <div class="color8"></div>
+                            ';
+                    }
+                    else{
+                        echo '
+                            <div class="color1"></div>
+                            <div class="color2"></div>
+                        ';
+                    }
                 }
                 ?>
                 

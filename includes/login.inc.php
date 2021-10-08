@@ -16,17 +16,17 @@ if (isset($_POST['submit'])) {
 
     // atama işlemleri
     $persons->set_email($_POST['email']);
-    $persons->set_hashed_password($_POST['hashed_password']);
+    $persons->set_hashed_password($_POST['password']);
 
 
     if (
         $login->emptyInputLogin($persons->get_email(), $persons->get_hashed_password()) !== true
     ) {
-        header("location: ../index.php?error=emptyinput&page=login");
+        header("location: ../index.php?error=emptyinput");
         exit();
     }
     if ($login->invalidEmail($persons->get_email()) !== true) {
-        header("location: ../index.php?error=invalidEmail&page=login");
+        header("location: ../index.php?error=invalidEmail");
         exit();
     }
     $login->login($persons->get_email(), $persons->get_hashed_password());
