@@ -70,6 +70,8 @@ to{
 }
 .color7,
 .color8,
+.color9,
+.color10,
 .color5,
 .color6{
     border-radius: 50px;
@@ -94,6 +96,7 @@ to{
     background: linear-gradient(266.75deg,rgba(240, 97, 35, 0) 5%, rgba(240, 97, 35, 0.7) 35%, rgba(35, 240, 228, 0.7) 65%, rgba(35, 240, 228, 0) 93%);
     transform: rotate(-45deg);
 }
+
 .color5{
     background: linear-gradient(266.75deg, rgba(240, 35, 207, 0) 5%, rgba(240, 35, 207, 0.7) 35%,rgba(240, 35, 35, 0.7) 65%, rgba(64, 240, 35, 0) 93%);
     transform: rotate(-135deg);
@@ -108,6 +111,14 @@ to{
 }
 .color8{
     background: linear-gradient(266.75deg,rgba(35, 240, 228, 0) 5%, rgba(240, 35, 35, 0.7) 35%, rgba(39, 35, 240, 0.7) 65%, rgba(39, 35, 240, 0) 93%);
+    transform: rotate(-45deg);
+}
+.color9{
+    background: linear-gradient(266.75deg, rgba(240, 35, 207, 0) 5%, rgba(240, 35, 207, 0.7) 35%, rgba(64, 240, 35, 0.7) 65%, rgba(64, 240, 35, 0) 93%);
+    transform: rotate(-135deg);
+}
+.color10{
+    background: linear-gradient(266.75deg,rgba(240, 97, 35, 0) 5%, rgba(240, 97, 35, 0.7) 35%, rgba(35, 240, 228, 0.7) 65%, rgba(35, 240, 228, 0) 93%);
     transform: rotate(-45deg);
 }
 /* bg end */
