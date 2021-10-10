@@ -2,10 +2,11 @@
 
 <?php
     include_once 'header.php'; //Header kısmının index.php sayfasına dahil edilmesi.
-?>
-<div class="h1-div">
-        <h1 class="h1">EntranceGate'e Hoşgeldin!</h1>
-</div>
-<?php
+    session_start();
+    if(isset($_SESSION['personid'])){
+        header('location: ./main.php');
+    }else{
+        include_once 'login_signup.php';
+    }
     include_once 'footer.php'; //Footer kısmının index.php sayfasına dahil edilmesi.
 ?>
