@@ -1,23 +1,16 @@
 <?php
 include_once 'header.php';
 session_start();
-if(isset($_SESSION['personid'])){?>
-
-
-
-    <link rel="stylesheet" href="styles/login-register/desktop.css?v=<?php echo time();?>">
-    <link rel="stylesheet" href="styles/login-register/laptop.css?v=<?php echo time();?>">
-    <link rel="stylesheet" href="styles/login-register/tablet.css?v=<?php echo time();?>">
-    <link rel="stylesheet" href="styles/login-register/mobile.css?v=<?php echo time();?>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    </head>
-    <body>
-        <section class="main">
-        <a href="includes/logout.inc.php">çıkış yap</a>
-
-
-
-<?php 
+if(isset($_SESSION['id'])){
+    if($_SESSION['user_possition'] == 0){
+        include_once 'person.php';
+    } elseif ($_SESSION['user_possition'] == 1) {
+        include_once 'security.php';
+    }  elseif ($_SESSION['user_possition'] == 2) {
+        include_once 'adminPage/admin.php';
+    } else {
+        echo '<h1>Hatalı Giriş</h1>';
+    }
 }else{
     header('location: ./index.php');
 }

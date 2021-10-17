@@ -26,7 +26,7 @@ class Unifunc
             return $resultArray;
         }
     }
-    function getDepartment($id)
+    function getDepartments($id)
     {
         $sql = "SELECT * FROM department WHERE faculty_id =" . $id . ";";
         $result = mysqli_query($this->db->get_conn(), $sql);
@@ -39,7 +39,7 @@ class Unifunc
             return $resultArray;
         }
     }
-    function getFaculty()
+    function getFacultys()
     {
         $sql = "SELECT * FROM  faculty;";
         $result = mysqli_query($this->db->get_conn(), $sql);

@@ -563,7 +563,7 @@
                                         echo'">
                                         <p class="form-info-text">Bağlı olduğunuz fakülteyi seçiniz</p>
                                         <div class="form-select-menu">';
-                                        foreach(getFaculty() as $item){
+                                        foreach(getFacultys() as $item){
                                             echo '<a href="?page=register&section=3&selected=';
                                            echo $item['id'];
                                             echo'" class="form-select-a">';
@@ -623,7 +623,7 @@
                                 echo'">
                                 <p class="form-info-text">Bağlı olduğunuz fakülteyi seçiniz</p>
                                 <div class="form-select-menu">';
-                                foreach(getFaculty() as $item){
+                                foreach(getFacultys() as $item){
                                     echo '<a href="?page=register&section=3&selected=';
                                    echo $item['id'];
                                     echo'" class="form-select-a">';
@@ -661,7 +661,7 @@
                                 echo'">
                                 <p class="form-info-text">Bağlı olduğunuz fakülteyi seçiniz</p>
                                 <div class="form-select-menu">';
-                                foreach(getDepartment($_SESSION['faculty_id']) as $item){
+                                foreach(getDepartments($_SESSION['faculty_id']) as $item){
                                     echo '<a href="?page=register&section=4&selected=';
                                    echo $item['id'];
                                     echo'" class="form-select-a">';
@@ -721,7 +721,7 @@
                                 echo'">
                                 <p class="form-info-text">Bağlı olduğunuz fakülteyi seçiniz</p>
                                 <div class="form-select-menu">';
-                                foreach(getDepartment($_SESSION['faculty_id']) as $item){
+                                foreach(getDepartments($_SESSION['faculty_id']) as $item){
                                     echo '<a href="?page=register&section=4&selected=';
                                    echo $item['id'];
                                     echo'" class="form-select-a">';
