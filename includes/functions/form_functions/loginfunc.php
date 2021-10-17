@@ -32,7 +32,8 @@ class login
             exit();
         } else if ($checkPwd === true) {
             session_start();
-            $_SESSION["personid"] = $emailExists["id"];
+            $_SESSION["id"] = $emailExists["id"];
+            $_SESSION["user_possition"] = $emailExists["user_possition"];
             header("location: ../main.php?error=success");
             exit();
         }
@@ -51,9 +52,41 @@ class login
 
         if ($row = mysqli_fetch_assoc($resultData)) {
             return $row;
-        } else {
-            return true;
+        } 
+        else{
+            $sql = "SELECT * FROM admin WHERE email = ?;";
+            $stmt = mysqli_stmt_init($this->db->get_conn());
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                header("location: ../index.php?error=stmtfailed");
+                exit();
+            }
+            mysqli_stmt_bind_param($stmt, "s", $email,);
+            mysqli_stmt_execute($stmt);
+            $resultData = mysqli_stmt_get_result($stmt);
+    
+            if ($row = mysqli_fetch_assoc($resultData)) {
+                return $row;
+            } 
+            else{
+                $sql = "SELECT * FROM security WHERE email = ?;";
+                $stmt = mysqli_stmt_init($this->db->get_conn());
+                if (!mysqli_stmt_prepare($stmt, $sql)) {
+                    header("location: ../index.php?error=stmtfailed");
+                    exit();
+                }
+                mysqli_stmt_bind_param($stmt, "s", $email,);
+                mysqli_stmt_execute($stmt);
+                $resultData = mysqli_stmt_get_result($stmt);
+        
+                if ($row = mysqli_fetch_assoc($resultData)) {
+                    return $row;
+                } 
+                else{
+                    return true;
+                }
+            }
         }
+        
         mysqli_stmt_close($stmt);
     }
 

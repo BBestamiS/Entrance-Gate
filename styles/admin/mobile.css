@@ -1,0 +1,13 @@
+@media only screen and (max-width: 480px) {
+    .user-sections-plate,
+    .user-texts-plate{
+        display: none;
+    }
+
+    .user-section-info-div{
+        transition: 1s;
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+  }

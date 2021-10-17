@@ -15,6 +15,25 @@ class Signup
 
     // Veri tabanı fonksiyonları bundan sonra yazılacak.
 
+    // public function adminRegister($email, $password)
+    // {
+        
+    //     $sql = "INSERT INTO admin (email, hashed_password) VALUES (?, ?);";
+        
+    //     $stmt = mysqli_stmt_init($this->db->get_conn());
+    //     if (!mysqli_stmt_prepare($stmt, $sql)) {
+    //         header("location: ../index.php?error=stmtfailed");
+    //         exit();
+    //     }
+    //     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+
+    //     mysqli_stmt_bind_param($stmt, "ss", $email, $hashedPwd);
+    //     mysqli_stmt_execute($stmt);
+    //     mysqli_stmt_close($stmt);
+    //     header("location: ../index.php?error=success");
+    //     exit();
+    // }
+    
     public function personRegister($person)
     {
         $sql = "INSERT INTO persons (name, surname, email, hashed_password, plate, faculty_id, department_id, possition_id, user_possition) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?);";

@@ -1,0 +1,12 @@
+@media only screen and (max-width: 768px) {
+  .user-sections-desktop, 
+  .user-texts-desktop{
+     display: none;
+   }
+
+   .user-section-info-div{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+  }
