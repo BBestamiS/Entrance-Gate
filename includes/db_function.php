@@ -27,8 +27,14 @@ function updateConfirmation($id, $status){
 }
 
 
-function getGate(){
-    return $GLOBALS['gatefunc']->getGate();
+function getGates(){
+    return $GLOBALS['gatefunc']->getGates();
+}
+function getGate($id){
+    return $GLOBALS['gatefunc']->getGate($id);
+}
+function getGateConfirmation($id){
+    return $GLOBALS['gatefunc']->getGateConfirmation($id);
 }
 
 

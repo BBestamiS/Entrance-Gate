@@ -3,10 +3,10 @@
                             <div class="user-bg">
                                 <div class="gate-div">
                                 <?php
-                                foreach(getGate() as $item){?>
+                                foreach(getGates() as $item){?>
                                 <div class="show-gate">
                                     <div class="show-gate-div">
-                                        <a href="#" class="show-gate-bg">
+                                        <a href="?id=<?php echo $item['id'] ?>" class="show-gate-bg">
                                         <div class="gate-name-div">
                                             <p class="gate-name"><?php echo $item['gate_name'] ?> Kapısı</p>
                                         </div>

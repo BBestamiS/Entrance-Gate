@@ -25,7 +25,7 @@ class Gatefunc
         header("location: ../main.php?selection=gate");
         exit();
     }
-    public function getGate(){
+    public function getGates(){
         $sql = "SELECT * FROM gate;";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultCheck = mysqli_num_rows($result);
@@ -35,6 +35,29 @@ class Gatefunc
                 $resultArray[] = $row;
             }
             return $resultArray;
+        }
+    }
+    function getGate($id)
+    {
+        $sql = "SELECT * FROM  gate WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $resultArray = array();
+        if ($resultCheck > 0) {
+            $row = mysqli_fetch_object($result);
+            return $row;
+        }
+    }
+    function getGateConfirmation($id)
+    {
+        $sql = "SELECT * FROM  gate WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $resultArray = array();
+        if ($resultCheck > 0) {
+            return true;
+        }else {
+            return false;
         }
     }
 }

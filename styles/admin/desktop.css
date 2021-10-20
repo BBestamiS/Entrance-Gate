@@ -16,6 +16,17 @@ body{
     justify-content: center;
     align-items: center;
 }
+.exit-button{
+    background-image: url('../../images/exit.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 3;
+}
 .admin-text{
     z-index: 1;
     font-size: 50px;
@@ -220,6 +231,9 @@ body{
     background-color: rgba(255, 255, 255, 0.32);
     backdrop-filter: blur(10px)
 }
+.user-bg::-webkit-scrollbar{
+    display: none;
+}
 .user-texts-plate,
 .user-texts-desktop,
 .user-texts{
@@ -411,4 +425,19 @@ body{
 .today-entry{
     color: black;
 }
+
 /* gate end */
+
+.back-button{
+    background-image: url("../../images/back.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 3;
+
+}
