@@ -3,7 +3,7 @@
 <?php
     include_once 'header.php'; //Header kısmının index.php sayfasına dahil edilmesi.
     session_start();
-    if(isset($_SESSION['personid'])){
+    if(isset($_SESSION['id'])){
         header('location: ./main.php');
     }else{
         include_once 'login_signup.php';

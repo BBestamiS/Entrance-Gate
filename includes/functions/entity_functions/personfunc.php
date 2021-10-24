@@ -28,7 +28,7 @@ class Personfunc
         $sql = "SELECT * FROM department WHERE id =" . $id . ";";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultCheck = mysqli_num_rows($result);
-        $resultArray = array();
+        $resultArray =   array();
         if ($resultCheck > 0) {
             $row = mysqli_fetch_object($result);
             return $row;
