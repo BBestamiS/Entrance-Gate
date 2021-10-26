@@ -11,7 +11,7 @@ require_once 'includes/db_function.php';
     <section class="main">
         <?php
            if(isset($_GET['selection'])){
-               if($_GET['selection'] == "user" || $_GET['selection'] == "gate" || $_GET['selection'] == "security" || $_GET['selection'] == "entry"){
+               if($_GET['selection'] == "user" || $_GET['selection'] == "gate" || $_GET['selection'] == "security" || $_GET['selection'] == "entry" || $_GET['selection'] == "getall"){
                 if($_GET['selection'] == "user"){?>
                 <a href="main.php" class="back-button"></a>
                 <?php
@@ -38,10 +38,31 @@ require_once 'includes/db_function.php';
                     <?php
                     include_once 'security/addsecurity.php';
                     include_once 'bg-animation/addsecurity.php';
-                } elseif ($_GET['selection'] == "entry") {?>
+                } elseif ($_GET['selection'] == "entry") {
+                    if(isset($_GET['guestid']) || isset($_GET['staffid'])){?>
+                    <a href="main.php?selection=entry&id=<?php echo $_GET['id'] ?>" class="back-button"></a>
+                    <?php
+                    }else {?>
                    <a href="main.php?id=<?php echo $_GET['id'] ?>" class="back-button"></a>
                     <?php
+                    }
+                    ?>
+                   
+                    <?php
+                    include_once 'gate/gateinfo.php';
                     include_once 'bg-animation/addsecurity.php';
+                }elseif ($_GET['selection'] == "getall") {
+                    if(isset($_GET['guestid']) || isset($_GET['staffid'])){?>
+                    <a href="main.php?jhhhhselection=getall" class="back-button"></a>
+                    <?php
+                    }else {?>
+                   <a href="main.php?selection=gate" class="back-button"></a>
+                    <?php
+                    }
+                    ?>
+                    <?php
+                    include_once 'gate/getall.php';
+                    include_once 'bg-animation/off.php';
                 }
                }
                else{?>

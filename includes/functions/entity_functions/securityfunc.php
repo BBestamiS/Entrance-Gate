@@ -87,4 +87,18 @@ class Securityfunc
         header("location: ../main.php?id=" . $security->get_gate_id() . "&error=success");
         exit();
     }
+    function getSecurity($id)
+    {
+        $sql = "SELECT * FROM  security WHERE id =" . $id . ";";
+        
+        $result = mysqli_query($this->db->get_conn(), $sql);
+     
+        $resultCheck = mysqli_num_rows($result);
+          
+        $resultArray = array();
+        if ($resultCheck > 0) {
+            $row = mysqli_fetch_object($result);
+            return $row;
+        }
+    }
 }

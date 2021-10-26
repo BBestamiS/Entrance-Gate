@@ -12,22 +12,33 @@ require_once 'includes/db_function.php';
     
     <?php
     if(isset($_GET['selection'])){
-        if($_GET['selection'] == "staff" || $_GET['selection'] == "guest"){
-            if($_GET['selection'] == "staff"){?>
-     <a href="main.php" class="back-button"></a>
+        if($_GET['selection'] == "staff" || $_GET['selection'] == "guest" || $_GET['selection'] == "exit"){
+            if($_GET['selection'] == "staff"){
+                include_once 'staff/staff.php';
+            } elseif ($_GET['selection'] == "guest") {
+              include_once 'guest/guest.php';
+            } elseif ($_GET['selection'] == "exit") {?>
+                  <a href="main.php" class="back-button"></a>
                     <article class="selection-user-article">
                             <div class="selection-user-bg">
                                 <div class="user-bg">
                                     <div class="form-div">
                                     <form class="form" action="./includes/entry.inc.php" method="post">
-                                        <input class="gate-input" type="text" name="staffId" placeholder="Personel Id'si">
-                                        <button class="gate-button" type="submit" name="submit">Giriş Yaptı</button>
+                                        <div class="plate-div">
+                                        <p class="plate-text">Araç Plakası</p>
+                                        <div class="plate-info-div">
+                                            <input class="input-left-plete" type="text" name="plateleft" placeholder="00" maxlength="2">
+                                            <input class="input-center-plete" type="text" name="platecenter" placeholder="XXX" maxlength="3">
+                                            <input class="input-right-plete" type="text" name="plateright" placeholder="000" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="possition" value="exit">
+                                        <button class="gate-button" type="submit" name="submit">Çıkış Yaptı</button>
                                     </form>
                                     </div>
                                 </div>
                             </div>
                         </article>
-
             <?php
             }
             ?>

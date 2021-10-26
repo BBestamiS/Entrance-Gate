@@ -34,6 +34,60 @@ class Personfunc
             return $row;
         }
     }
+    function getStaff($id)
+    {
+        $sql = "SELECT * FROM persons WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $resultArray =   array();
+        if ($resultCheck > 0) {
+            $row = mysqli_fetch_object($result);
+            return $row;
+        }
+    }
+    function getGuest($id)
+    {
+        $sql = "SELECT * FROM guestentry WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $resultArray =   array();
+        if ($resultCheck > 0) {
+            $row = mysqli_fetch_object($result);
+            return $row;
+        }
+    }
+    function getGuests()
+    {
+        date_default_timezone_set('Europe/Istanbul');
+        $sql = "SELECT * FROM  guestentry WHERE exit_date IS NULL ;";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultArray = array();
+            while ($row = mysqli_fetch_assoc($result)) {
+                $resultArray[] = $row;
+            }
+            $sql = "SELECT * FROM  guestentry WHERE exit_date IS NOT NULL AND entry_date ='" . date("Y-m-d") . "';";
+            $result = mysqli_query($this->db->get_conn(), $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $resultArray[] = $row;
+                }
+                return $resultArray;
+    }
+    function getStaffs()
+    {
+        date_default_timezone_set('Europe/Istanbul');
+        $sql = "SELECT * FROM  staffentry WHERE exit_date IS NULL;";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultArray = array();
+            while ($row = mysqli_fetch_assoc($result)) {
+                $resultArray[] = $row;
+            }
+            $sql = "SELECT * FROM  staffentry WHERE exit_date IS NOT NULL AND entry_date ='" . date("Y-m-d") . "';";
+            $result = mysqli_query($this->db->get_conn(), $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $resultArray[] = $row;
+                }
+                return $resultArray;
+    }
     function getUserFaculty($id)
     {
         $sql = "SELECT * FROM  faculty WHERE id =" . $id . ";";
@@ -43,6 +97,41 @@ class Personfunc
         if ($resultCheck > 0) {
             $row = mysqli_fetch_object($result);
             return $row;
+        }
+    }
+
+    function getGuestConfirmation($id)
+    {
+        $sql = "SELECT * FROM  guestentry WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    function getStaffConfirmation($id)
+    {
+        $sql = "SELECT * FROM  persons WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+    function getStaffEntryConfirmation($id)
+    {
+        $sql = "SELECT * FROM  staffentry WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            return true;
+        }else {
+            return false;
         }
     }
 

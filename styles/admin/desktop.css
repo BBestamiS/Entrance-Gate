@@ -164,7 +164,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.32);
-    backdrop-filter: blur(10px)
+    backdrop-filter: blur(10px);
 }
 .selection-text{
     z-index: 1;
@@ -440,4 +440,175 @@ body{
     right: 40px;
     z-index: 3;
 
+}
+.total-vehicles-bg{
+    width: 100%;
+    height: 300px;
+    backdrop-filter: blur(10px);
+}
+.total-vehicles-div{
+    transition: 0.5s;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-direction: column;
+}
+.total-vehicles-p{
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 28px;
+}
+.total-vehicles-date{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 20px;
+}
+.date-div{
+    top: 0px;
+    right: 20px;
+    width: 100%;
+    position: absolute;
+    margin-right: 20px;
+    display: flex;
+    justify-content: end;
+}
+.entry-list-div{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.entry-list-div::-webkit-scrollbar{
+    display: none;
+}
+.guest-info-section,
+.staff-info-section{
+    overflow: scroll;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    width: 50%;
+}
+.guest-info-section::-webkit-scrollbar,
+.staff-info-section::-webkit-scrollbar{
+display: none;
+}
+.guest-info-h1,
+.staff-info-h1{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+.staff-info-list-bg{
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: rgba(0, 255, 140, 0.382);
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+.staff-info-list-bg1{
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: rgba(8, 0, 255, 0.382);
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+.staff-name-p{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+.staff-info-p{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.staff-info-plate,
+.staff-name-surname-div{
+    width: 100%;
+}
+.staff-name-surname-div{
+    display: flex;
+    justify-content: flex-start;
+}
+.staff-info-list-div{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.color-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.color-exit,
+.color-entry{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.color-entry{
+    background-color: rgba(0, 255, 140, 0.382);
+}
+.color-exit{
+    background-color: rgba(8, 0, 255, 0.382);
+}
+.color-div{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+}
+.color-text{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+.staff-gate-info-header-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+}
+.staff-info-header-p{
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+.staff-gate-info-header-possition{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.staff-gate-info-second-div,
+.staff-gate-info-first-div{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.total-vehicles-div:hover{
+    background-color: rgba(255, 255, 255, 0.827);
 }
