@@ -380,7 +380,7 @@ body{
 }
 .show-gate-div{
     width: 100%;
-   
+   position: relative;
     display: flex;
     justify-content: center;
 }
@@ -399,6 +399,9 @@ body{
 }
 .show-gate-bg:hover{
     background-color: rgba(255, 255, 255, 0.827);
+}
+.show-gate-div:hover .delete-gate-div{
+    visibility: visible;
 }
 .gate-name-div{
     display: flex;
@@ -487,6 +490,7 @@ body{
 .entry-list-div::-webkit-scrollbar{
     display: none;
 }
+
 .guest-info-section,
 .staff-info-section{
     overflow: scroll;
@@ -495,7 +499,15 @@ body{
     display: flex;
     width: 50%;
 }
+.security-info-section{
+    overflow: scroll;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
 .guest-info-section::-webkit-scrollbar,
+.security-info-section::-webkit-scrollbar,
 .staff-info-section::-webkit-scrollbar{
 display: none;
 }
@@ -514,6 +526,18 @@ display: none;
     padding: 20px;
     width: 100%;
     max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+.security-info-list-bg{
+    position: relative;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: rgba(0, 255, 140, 0.382);
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
     display: flex;
     justify-content: space-between;
 }
@@ -548,9 +572,10 @@ display: none;
     justify-content: flex-start;
 }
 .staff-info-list-div{
-
+    position: relative;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -611,4 +636,32 @@ display: none;
 }
 .total-vehicles-div:hover{
     background-color: rgba(255, 255, 255, 0.827);
+}
+.delete-gate{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-image: url('../../images/close.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.delete-gate-div{
+    visibility: hidden;
+    position: absolute;
+    width: 80%;
+    max-width: 300px;
+}
+.delete-security{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    background-image: url('../../images/close.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

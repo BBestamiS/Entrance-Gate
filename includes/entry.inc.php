@@ -14,22 +14,36 @@ if (isset($_POST['submit'])) {
     $securityfunc = new Securityfunc($db);
 
     if($_POST['possition'] == "staff"){
-        if(empty($_POST['staffId'])){
-            header("location: ../main.php?selection=staff&error=emptyId");
+        if($_POST['section'] == "1"){
+            if(empty($_POST['staffId'])){
+                header("location: ../main.php?selection=staff&error=emptyId");
+                exit();
+            }
+            if($entryfunc->invalidId($_POST['staffId']) !== true){
+                header("location: ../main.php?selection=staff&error=invalidId");
+                exit();
+            }
+            
+            if ($entryfunc->idConfirmation($_POST['staffId']) !== true) {
+                header("location: ../main.php?selection=staff&error=notFoundId");
+                exit();
+            }
+            header('location: ../main.php?selection=staff&id=' . $_POST['staffId']);
             exit();
-        }
-        if($entryfunc->invalidId($_POST['staffId']) !== true){
-            header("location: ../main.php?selection=staff&error=invalidId");
-            exit();
+        }elseif ($_POST['section'] == "2") {
+            if($entryfunc->invalidId($_POST['staffId']) !== true){
+                header("location: ../main.php?selection=staff&error=invalidId");
+                exit();
+            }
+            if ($entryfunc->idConfirmation($_POST['staffId']) !== true) {
+                header("location: ../main.php?selection=staff&error=notFoundId");
+                exit();
+            }
+            session_start();
+            $security = $securityfunc->getSecurity($_SESSION['id']);
+            $entryfunc->staffEntry($_POST['staffId'],$security->gate_id ,$_SESSION['id'] );
         }
         
-        if ($entryfunc->idConfirmation($_POST['staffId']) !== true) {
-            header("location: ../main.php?selection=staff&error=notFoundId");
-            exit();
-        }
-        session_start();
-        $security = $securityfunc->getSecurity($_SESSION['id']);
-        $entryfunc->staffEntry($_POST['staffId'],$security->gate_id ,$_SESSION['id'] );
     } elseif ($_POST['possition'] == "guest") {
         if(empty($_POST['name']) && empty($_POST['surname']) && empty($_POST['plateleft']) && empty($_POST['platecenter']) && empty($_POST['plateright'])){
             header("location: ../main.php?selection=guest&error=emptyInput");
@@ -66,6 +80,20 @@ if (isset($_POST['submit'])) {
         session_start();
         $security = $securityfunc->getSecurity($_SESSION['id']);
         $entryfunc->exitGate($plate, $security->gate_id ,$_SESSION['id']);
+        
+    }elseif ($_POST['possition'] == "update") {
+        if(empty($_POST['plateleft']) && empty($_POST['platecenter']) && empty($_POST['plateright'])){
+            header("location: ../main.php?selection=exit&error=emptyInput");
+            exit();
+        }
+        
+        if ($entryfunc->noFoundPlate($_POST['plateleft'], $_POST['platecenter'], $_POST['plateright']) == true) {
+            header("location: ../main.php?selection=exit&error=invalidPlate");
+            exit();
+        }
+        $plate = strtolower($_POST['plateleft'] . " " . $_POST['platecenter'] . " " . $_POST['plateright']);
+        session_start();
+        $entryfunc->updatePlate($plate,$_SESSION['id']);
         
     }
     else{

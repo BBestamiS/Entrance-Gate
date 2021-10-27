@@ -59,6 +59,23 @@ class Entryfunc
         header("location: ../main.php?selection=guest&error=success");
         exit();
     }
+    function  updatePlate($plate, $id)
+    {
+        $sql = "UPDATE persons SET plate = ? WHERE id = ?;";
+
+        $stmt = mysqli_stmt_init($this->db->get_conn());
+        
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("location: ../main.php?error=stmtfailed");
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt, "si", $plate, $id);
+        mysqli_stmt_execute($stmt);
+        header('location: ../main.php?error=plateUpdated');
+        exit();
+        mysqli_stmt_close($stmt);
+    }
+    
     public function  exitGate($plate, $exitGateId, $securityId)
     {
         $sql = "SELECT * FROM  guestentry WHERE plate ='" . $plate . "';";

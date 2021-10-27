@@ -38,6 +38,7 @@ class Gatefunc
         }
     }
     public function getGateStaffInfo($gateid){
+        date_default_timezone_set('Europe/Istanbul');
         $sql = "SELECT * FROM  staffentry WHERE exit_date IS NULL AND entry_gate_id =" . $gateid . " AND entry_date ='" . date("Y-m-d") . "';";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultArray = array();
@@ -52,6 +53,7 @@ class Gatefunc
                 return $resultArray;
     }
     public function getGateGuestInfo($gateid){
+        date_default_timezone_set('Europe/Istanbul');
         $sql = "SELECT * FROM  guestentry WHERE exit_date IS NULL AND entry_gate_id =" . $gateid . " AND entry_date ='" . date("Y-m-d") . "';";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultArray = array();
@@ -64,6 +66,15 @@ class Gatefunc
                     $resultArray[] = $row;
                 }
                 return $resultArray;
+    }
+    public function getSecuritys($gateid){
+        $sql = "SELECT * FROM  security WHERE gate_id =" . $gateid . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultArray = array();
+            while ($row = mysqli_fetch_assoc($result)) {
+                $resultArray[] = $row;
+            }
+            return $resultArray;
     }
     function getGate($id)
     {
@@ -86,6 +97,20 @@ class Gatefunc
             $row = mysqli_fetch_object($result);
             return $row;
         }
+    }
+    function deleteGate($id)
+    {
+        $sql = "DELETE FROM gate WHERE id =" . $id . ";";
+        $this->db->get_conn()->query($sql);
+        header("location: ./main.php?selection=gate");
+        exit();
+    }
+    function deleteSecurity($id, $gateid)
+    {
+        $sql = "DELETE FROM security WHERE id =" . $id . ";";
+        $this->db->get_conn()->query($sql);
+        header("location: ./main.php?selection=showsecuritys&id=" . $gateid);
+        exit();
     }
     function getStaffInfo($id)
     {
@@ -112,6 +137,18 @@ class Gatefunc
     function getGateConfirmation($id)
     {
         $sql = "SELECT * FROM  gate WHERE id =" . $id . ";";
+        $result = mysqli_query($this->db->get_conn(), $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $resultArray = array();
+        if ($resultCheck > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+    function getSecurityConfirmation($id)
+    {
+        $sql = "SELECT * FROM  security WHERE id =" . $id . ";";
         $result = mysqli_query($this->db->get_conn(), $sql);
         $resultCheck = mysqli_num_rows($result);
         $resultArray = array();

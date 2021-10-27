@@ -56,11 +56,20 @@ function getGates(){
 function getSecurity($id){
     return $GLOBALS['gatefunc']->getSecurity($id);
 }
+function getSecuritys($id){
+    return $GLOBALS['gatefunc']->getSecuritys($id);
+}
+function deleteSecurity($id, $gateid){
+    return $GLOBALS['gatefunc']->deleteSecurity($id , $gateid);
+}
 function getGate($id){
     return $GLOBALS['gatefunc']->getGate($id);
 }
 function getGateConfirmation($id){
     return $GLOBALS['gatefunc']->getGateConfirmation($id);
+}
+function getSecurityConfirmation($id){
+    return $GLOBALS['gatefunc']->getSecurityConfirmation($id);
 }
 function getVehiclesInfo(){
     return $GLOBALS['gatefunc']->getVehiclesInfo();
@@ -79,6 +88,9 @@ function getStaffInfo($id){
 }
 function getGuestInfo($id){
     return $GLOBALS['gatefunc']->getGuestInfo($id);
+}
+function deleteGate($id){
+    return $GLOBALS['gatefunc']->deleteGate($id);
 }
 
 

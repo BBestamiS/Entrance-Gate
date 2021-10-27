@@ -30,6 +30,10 @@ $vehicleInfo = getVehiclesInfo();
                                             <p class="today-entry">Çıkış <?php echo $gateInfo[1] ?></p>
                                         </div>
                                        </a>
+                                       <div class="delete-gate-div">
+                                           <a href="?deleteid=<?php echo $item['id'] ?>" class="delete-gate"></a>
+                                       </div>
+
                                     </div>
                                 </div>
                                 <?php

@@ -1,4 +1,3 @@
-
             <section class="color-info">
                             <div class="color-div">
                                 <div class="color-entry"></div>

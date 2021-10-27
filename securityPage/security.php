@@ -14,7 +14,15 @@ require_once 'includes/db_function.php';
     if(isset($_GET['selection'])){
         if($_GET['selection'] == "staff" || $_GET['selection'] == "guest" || $_GET['selection'] == "exit"){
             if($_GET['selection'] == "staff"){
-                include_once 'staff/staff.php';
+                if(isset($_GET['id'])){
+                    if(getStaffConfirmation($_GET['id'])){
+                        include_once 'staff/staffConfirm.php';
+                    }else{
+                        include_once 'staff/staff.php';
+                    }
+                }else{
+                    include_once 'staff/staff.php';
+                }
             } elseif ($_GET['selection'] == "guest") {
               include_once 'guest/guest.php';
             } elseif ($_GET['selection'] == "exit") {?>
