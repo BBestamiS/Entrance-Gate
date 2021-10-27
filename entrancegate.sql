@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Anamakine: localhost
--- Üretim Zamanı: 08 Eki 2021, 01:32:20
--- Sunucu sürümü: 10.4.20-MariaDB
--- PHP Sürümü: 8.0.8
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 13 Eki 2021, 22:04:24
+-- Sunucu sürümü: 10.4.21-MariaDB
+-- PHP Sürümü: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,7 +68,60 @@ INSERT INTO `department` (`id`, `name`, `faculty_id`) VALUES
 (28, 'Psikoloji', 4),
 (29, 'Sosyoloji', 4),
 (30, 'Tarih', 4),
-(31, 'Türk Dili ve Edebiyatı', 4);
+(31, 'Türk Dili ve Edebiyatı', 4),
+(32, 'Müzik Bilimleri', 5),
+(33, 'Resim', 5),
+(34, 'Peyzaj Mimarlığı', 5),
+(35, 'Seramik', 5),
+(36, 'Geleneksel El Sanatları', 5),
+(37, 'Grafik Tasarım', 5),
+(38, 'Cerrahi Hastalıklar ', 6),
+(39, 'Çocuk Sağlığı ve Hastalıkları ', 6),
+(40, 'Doğum-Kadın Sağlığı ve Hastalıkları ', 6),
+(41, 'Halk Sağlığı ', 6),
+(42, 'Hemşirelik Esasları', 6),
+(43, 'Hemşirelikte Yönetim', 6),
+(44, 'İç Hastalıkları ', 6),
+(45, 'Psikiyatri', 6),
+(46, 'Onkoloji', 6),
+(47, 'Kamu', 7),
+(48, 'Özel', 7),
+(49, 'Çalışma Ekonomisi ve Endüstri İlişkileri', 8),
+(50, 'Ekonometri', 8),
+(51, 'İktisat', 8),
+(52, 'İşletme', 8),
+(53, 'Maliye', 8),
+(54, 'Siyaset Bilimi ve Kamu Yönetimi', 8),
+(55, 'Siyaset Bilimi Ve Uluslararası İlişkiler ', 8),
+(56, 'Uluslararası Ticaret ve İşletmecilik', 8),
+(57, 'Temel İslam Bilimleri', 9),
+(58, 'Felsefe ve Din Bilimleri', 9),
+(59, 'İslam Tarihi ve Sanatları', 9),
+(60, 'Halkla İlişkiler ve Tanıtım', 10),
+(61, 'Gazetecilik', 10),
+(62, 'Radyo, Televizyon ve Sinema', 10),
+(63, 'Bilgisayar ', 11),
+(64, 'Biyomedikal ', 11),
+(65, 'Elektrik-Elektronik  ', 11),
+(66, 'Gıda ', 11),
+(67, 'İnşaat ', 11),
+(68, 'Kimya ', 11),
+(69, 'Maden ', 11),
+(70, 'Makine ', 11),
+(71, 'Yazılım ', 11),
+(72, 'Beslenme ve Diyetetik', 12),
+(73, 'Çocuk Gelişimi', 12),
+(74, 'Ebelik', 12),
+(75, 'Fizyoterapi ve Rehabilitasyon', 12),
+(76, 'Odyoloji', 12),
+(77, 'Antrenörlük Eğitimi', 13),
+(78, 'Beden Eğitimi ve Spor Öğretmenliği', 13),
+(79, 'Engellilerde Beden Eğitimi ve Spor Eğitimi', 13),
+(80, 'Spor Yöneticiliği', 13),
+(81, 'Danışmanlıklar', 13),
+(82, 'Cerrahi Tıp Bilimleri', 14),
+(83, 'Dahili Tıp Bilimleri', 14),
+(84, 'Temel Tip Bilimleri', 14);
 
 -- --------------------------------------------------------
 
@@ -152,7 +205,7 @@ ALTER TABLE `persons`
 -- Tablo için AUTO_INCREMENT değeri `department`
 --
 ALTER TABLE `department`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `faculty`
