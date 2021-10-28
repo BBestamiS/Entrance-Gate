@@ -279,3 +279,13 @@ body{
     font-family: 'Poppins', sans-serif;
     color: greenyellow;
 }
+.entry-success{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: greenyellow;
+}
+.entry-error{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: red;
+}

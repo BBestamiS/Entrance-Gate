@@ -374,3 +374,13 @@ body{
 .staff-security-info{
     margin-bottom: 10px;
 }
+.entry-success{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: greenyellow;
+}
+.entry-error{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: red;
+}

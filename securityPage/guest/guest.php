@@ -16,7 +16,17 @@
                                     </div>
                                     <input type="hidden" name="possition" value="guest">
                                         <button class="gate-button" type="submit" name="submit">Giriş Yaptı</button>
+                                        <?php
+                                    if(isset($_GET['error'])){
+                                        if($_GET['error'] == "success"){?>
+                                            <p class="entry-success">Giriş Başarılı</p>
+                                        <?php   
+                                            
+                                        }
+                                    }
+                                    ?>
                                     </form>
+                                   
                                     </div>
                                 </div>
                             </div>

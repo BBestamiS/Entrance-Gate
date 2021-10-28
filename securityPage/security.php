@@ -42,6 +42,22 @@ require_once 'includes/db_function.php';
                                     </div>
                                     <input type="hidden" name="possition" value="exit">
                                         <button class="gate-button" type="submit" name="submit">Çıkış Yaptı</button>
+                                        <?php
+                                    if(isset($_GET['error'])){
+                                        if($_GET['error'] == "success"){?>
+                                            <p class="entry-success">Çıkış Başarılı</p>
+                                        <?php   
+                                            
+                                        }elseif ($_GET['error'] == "emptyInput") {?>
+                                            <p class="entry-error">Tüm Alanları Doldurunuz</p>
+                                            <?php
+                                        }
+                                        elseif ($_GET['error'] == "invalidPlate") {?>
+                                            <p class="entry-error">Geçersiz Plaka</p>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                     </form>
                                     </div>
                                 </div>

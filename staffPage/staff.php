@@ -52,6 +52,22 @@ require_once 'includes/db_function.php';
                                     </div>
                                     <input type="hidden" name="possition" value="update">
                                         <button class="gate-button" type="submit" name="submit">Aracı Güncelle</button>
+                                        <?php
+                                    if(isset($_GET['error'])){
+                                        if($_GET['error'] == "plateUpdated"){?>
+                                            <p class="entry-success">Plaka Güncellendi</p>
+                                        <?php   
+                                            
+                                        }elseif ($_GET['error'] == "emptyInput") {?>
+                                            <p class="entry-error">Tüm Alanları Doldurunuz</p>
+                                            <?php
+                                        }
+                                        elseif ($_GET['error'] == "notFoundId") {?>
+                                            <p class="entry-error">Personel bulunamadı</p>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                     </form>
                                     </div>
                                 </div>
