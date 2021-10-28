@@ -396,6 +396,9 @@ to{
     justify-content: flex-start;
     align-items: center;
 }
+.form-select-menu::-webkit-scrollbar{
+    display: none;
+}
 .select-menu-item-p{
     display: inline-block;
     color:#FFFFFF;

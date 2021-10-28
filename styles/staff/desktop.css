@@ -16,27 +16,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.exit-button{
-    background-image: url('../../images/exit.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    z-index: 3;
-}
-.security-text{
-    z-index: 1;
-    font-size: 50px;
-    font-family: 'Poppins', sans-serif;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-}
-/* bg start */
+
 @keyframes splashbgopacity{
     from{
         opacity: 0;
@@ -94,7 +74,7 @@ body{
         transform: rotate(90deg);
     }
     100%{
-        transform: rotate(45deg);
+        transform: rotate(135deg);
     }
     }
 .color1-on,
@@ -123,7 +103,7 @@ body{
     animation-fill-mode: forwards;
     animation-duration: 2s;
     right: 200px;
-    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(35, 240, 73, 0.7) 35%, rgba(35, 137, 240, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
+    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(35, 223, 240, 0.7) 35%, rgba(141, 35, 240, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
     transform: rotate(90deg);
 }
 .color2-on{
@@ -132,91 +112,38 @@ body{
     animation-fill-mode: forwards;
     animation-duration: 2s;
     left: 200px;
-    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(76, 35, 240, 0.663) 35%, rgba(240, 35, 127, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
+    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(66, 240, 35, 0.663) 35%, rgba(240, 137, 35, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
     transform: rotate(90deg);
 }
 .color1-off{
     right: 200px;
-    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(35, 240, 73, 0.7) 35%, rgba(35, 137, 240, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
+    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(35, 223, 240, 0.7) 35%, rgba(141, 35, 240, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
     transform: rotate(45deg);
 }
 .color2-off{
     left: 200px;
-    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(76, 35, 240, 0.663) 35%, rgba(240, 35, 127, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
-    transform: rotate(45deg);
+    background: linear-gradient(266.75deg, rgba(236, 240, 35, 0) 5%, rgba(66, 240, 35, 0.663) 35%, rgba(240, 137, 35, 0.7) 65%, rgba(224, 35, 240, 0) 93%);
+    transform: rotate(135deg);
 }
-/* bg end */
-
-.selection-article{
-    position: relative;
-    width: 100%;
-    height: 60%;
-}
-
-.selection-bg-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.32);
-    backdrop-filter: blur(10px)
-}
-.selection-text{
+.security-text{
     z-index: 1;
-
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
     position: absolute;
-    font-family: 'Poppins', sans-serif;
-    font-size: 25px;
-    color: orange;
-    height: 20%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
-}
-.selection3-div{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.selection-div{
-    height: 40%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-.selection1-div,
-.selection2-div{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.selection1,
-.selection2{
-    text-align: center;
-    font-size: 40px;
-    text-decoration: none;
+    top: 20px;
+    left: 20px;
     color: white;
-    font-family: 'Poppins', sans-serif;
-    transition: 0.2s;
 }
-.selection1:hover,
-.selection2:hover{
-    color: greenyellow;
-}
-/* selection end */
-
-.selection-user-article{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
+.exit-button{
+    background-image: url('../../images/exit.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 3;
 }
 .selection-user-bg{
     position: relative;
@@ -234,8 +161,11 @@ body{
     background-color: rgba(255, 255, 255, 0.32);
     backdrop-filter: blur(10px)
 }
-.user-bg::-webkit-scrollbar{
-    display: none;
+.selection-user-article{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
 }
 .form-div{
     width: 100%;
@@ -251,21 +181,6 @@ body{
     width: 40%;
 
 }
-.gate-input{
-    width: 100%;
-    border: none;
-    border-radius: 30px;
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-.gate-input:focus{
-   outline: none;
-}
 .gate-button{
     cursor: pointer;
     background: transparent;
@@ -277,19 +192,6 @@ body{
 }
 .gate-button:hover{
     color: orange;
-}
-.back-button{
-    background-image: url("../../images/back.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    z-index: 3;
-
 }
 .plate-div{
     display: flex;
@@ -352,27 +254,30 @@ body{
 .staff-security-p{
     font-size: 20px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     color: rgb(0, 254, 110);
 }
 .staff-security-p2{
     font-size: 25px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     color: #000000;
 }
 .staff-security-p1{
     font-size: 25px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     color: rgb(254, 148, 0);
 }
-
-.staff-security-info{
-    margin-bottom: 10px;
+.staff-security-text{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    color: greenyellow;
 }
 .entry-success{
     margin-top: 10px;

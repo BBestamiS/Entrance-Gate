@@ -15,5 +15,12 @@
                 </a>
             </div>
             </div>
+            <div class="selection3-div">
+                <div class="selection1-div">
+                <a href="?selection=exit" class="selection1">
+                    Çıkış İşlemleri
+                </a>
+                </div>
+            </div>
             </div>
 </article>

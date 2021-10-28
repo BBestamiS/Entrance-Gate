@@ -3,7 +3,7 @@ include_once 'header.php';
 session_start();
 if(isset($_SESSION['id'])){
     if($_SESSION['user_possition'] == 0){
-        include_once 'person.php';
+        include_once 'staffPage/staff.php';
     } elseif ($_SESSION['user_possition'] == 1) {
         include_once 'securityPage/security.php';
     }  elseif ($_SESSION['user_possition'] == 2) {
